@@ -6,19 +6,14 @@
 <title>526·非正常人类研究中心</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0a0f;--surface:#12121a;--card:#1a1a28;
-  --green:#39ff9c;--amber:#ffb347;--pink:#ff4d8a;
-  --cyan:#00f0ff;--purple:#b366ff;--red:#ff3355;
-  --text:#e0e0e8;--muted:#8888a0;--border:#2a2a3e;
-}
+:root{--bg:#0a0a0f;--surface:#12121a;--card:#1a1a28;--green:#39ff9c;--amber:#ffb347;--pink:#ff4d8a;--cyan:#00f0ff;--purple:#b366ff;--red:#ff3355;--text:#e0e0e8;--muted:#8888a0;--border:#2a2a3e}
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08)2px,rgba(0,0,0,.08)4px)}
 @keyframes flicker{0%,100%{opacity:1}3%{opacity:.92}6%{opacity:1}7%{opacity:.94}8%{opacity:1}41%{opacity:1}44%{opacity:.96}46%{opacity:1}}
 @keyframes glitch-text{0%,90%,100%{opacity:1}91%{opacity:.7}93%{opacity:1}95%{opacity:.6}97%{opacity:1}}
 .particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.particle{position:absolute;width:3px;height:3px;background:var(--green);border-radius:50%;opacity:0;animation:particleFloat 6s ease-in-out infinite}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;opacity:0;animation:particleFloat 6s ease-in-out infinite}
 @keyframes particleFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}20%{opacity:.6}80%{opacity:.6}100%{opacity:0;transform:translateY(-10vh) scale(1)}}
 .hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;animation:flicker 4s infinite}
 .hero-badge{display:inline-block;border:2px solid var(--amber);color:var(--amber);padding:.4rem 1.2rem;font-size:.85rem;letter-spacing:4px;border-radius:4px;margin-bottom:2rem;opacity:.8;font-weight:300}
@@ -35,9 +30,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .section-title{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:700;margin-bottom:1rem;color:var(--text)}
 .section-desc{color:var(--muted);font-size:1rem;max-width:700px;margin-bottom:3rem}
 .lab-intro-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem;position:relative;overflow:hidden}
-.lab-intro-card::before{content:'\26A0 LAB ACCESS: GRANTED';position:absolute;top:0;right:0;background:var(--green);color:#111;font-size:.65rem;padding:.25rem .75rem;letter-spacing:1px;font-weight:600;border-radius:0 0 0 6px}
+.lab-intro-card::before{content:'⚠ LAB ACCESS: GRANTED';position:absolute;top:0;right:0;background:var(--green);color:#111;font-size:.65rem;padding:.25rem .75rem;letter-spacing:1px;font-weight:600;border-radius:0 0 0 6px}
 .lab-intro-card p{color:var(--muted);line-height:1.8;font-size:.95rem}
-.member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
+.member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
 .member-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0;position:relative;transition:all .3s ease;cursor:default;overflow:hidden}
 .member-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,240,255,.1)}
 .member-card .card-img{width:100%;height:auto;min-height:200px;max-height:400px;object-fit:contain;display:block;border-bottom:1px solid var(--border);background:var(--surface)}
@@ -61,10 +56,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .member-card:nth-child(2) .name{color:var(--cyan)}
 .member-card:nth-child(3) .name{color:var(--purple)}
 .member-card:nth-child(4) .name{color:var(--pink)}
-.member-thumbs{display:flex;gap:.5rem;margin-top:.8rem;overflow-x:auto;padding-bottom:.3rem}
-.member-thumbs img{height:80px;width:auto;object-fit:contain;border-radius:4px;cursor:pointer;flex-shrink:0;border:1px solid var(--border);background:var(--surface)}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.gallery-item{border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--card);transition:all .3s ease;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;background:var(--surface);min-height:200px}
+.gallery-item{border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--card);transition:all .3s ease;cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--surface);min-height:200px}
 .gallery-item:hover{border-color:var(--cyan);transform:scale(1.02);box-shadow:0 4px 20px rgba(0,240,255,.15)}
 .gallery-item img{width:100%;height:auto;max-height:350px;object-fit:contain;display:block}
 .achievements{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:2rem}
@@ -92,90 +85,103 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 .lightbox img{max-width:90vw;max-height:90vh;border-radius:8px}
 .lightbox .close{position:absolute;top:20px;right:30px;color:var(--muted);font-size:2.5rem;cursor:pointer}
 .lightbox .close:hover{color:#fff}
+/* Nav link to article page */
+.nav-article{position:fixed;top:12px;right:16px;z-index:100;font-size:.75rem;color:var(--amber);border:1px solid var(--amber);padding:.3rem .8rem;border-radius:4px;text-decoration:none;opacity:.6;transition:all .2s;font-family:inherit}
+.nav-article:hover{opacity:1;background:var(--amber);color:#111}
 @media(max-width:600px){
   .section{padding:3rem 1rem}
   .member-grid,.achievement-list,.activity-gallery,.gallery-grid{grid-template-columns:1fr}
   .hero h1{font-size:2rem}
   .lab-intro-card::before{font-size:.55rem;padding:.2rem .5rem}
 }
+.music-btn{position:fixed;bottom:20px;left:20px;z-index:100;width:40px;height:40px;border-radius:50%;border:1px solid var(--cyan);background:var(--bg);color:var(--cyan);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;opacity:.5;transition:all .3s}
+.music-btn:hover{opacity:1;border-color:var(--green);color:var(--green);box-shadow:0 0 14px rgba(57,255,156,.25)}
+.music-btn.on{border-color:var(--green);color:var(--green);opacity:.85;animation:pulseMusic 2s infinite}
+@keyframes pulseMusic{0%,100%{box-shadow:0 0 4px rgba(57,255,156,.3)}50%{box-shadow:0 0 18px rgba(57,255,156,.6)}}
+.music-tip{position:fixed;bottom:26px;left:68px;z-index:100;font-size:.7rem;color:var(--muted);opacity:0;transition:opacity .4s;pointer-events:none;white-space:nowrap}
+.music-tip.show{opacity:.7}
 </style>
 </head>
 <body>
 <div class="particles" id="particles"></div>
+<button class="music-btn" id="musicBtn" title="播放音乐" onclick="toggleMusic()">♪</button>
+<span class="music-tip" id="musicTip">点击播放BGM</span>
+<audio id="bgm" loop preload="auto" src="music/bgm.mp3"></audio>
+
+<a class="nav-article" href="article.html">📄 文章版</a>
 <header class="hero" id="top">
-  <div class="hero-badge">&#x26A0; CLASSIFIED &#xB7; LEVEL 526</div>
-  <h1>&#x975E;&#x6B63;&#x5E38;&#x4EBA;&#x7C7B;&#x7814;&#x7A76;&#x4E2D;&#x5FC3;</h1>
-  <p class="subtitle">&#x4E2D;&#x5C71;&#x5927;&#x5B66; &#xB7; &#x8354;&#x56ED;11&#x680B;526&#x5BA4;</p>
-  <p class="subject-count">&#x1F9EA; &#x5F53;&#x524D;&#x89C2;&#x5BDF;&#x5BF9;&#x8C61;&#xFF1A;<strong>4</strong> &#x540D; &#xB7; &#x5B9E;&#x9A8C;&#x6301;&#x7EED;&#x8FDB;&#x884C;&#x4E2D;</p>
-  <div class="scroll-hint">&#x25BC; &#x4E0B;&#x6ED1;&#x67E5;&#x770B;&#x5B9E;&#x9A8C;&#x6863;&#x6848; &#x25BC;</div>
+  <div class="hero-badge">⚠ CLASSIFIED · LEVEL 526</div>
+  <h1>非正常人类研究中心</h1>
+  <p class="subtitle">中山大学 · 荔园11栋526室</p>
+  <p class="subject-count">🧪 当前观察对象：<strong>4</strong> 名 · 实验持续进行中</p>
+  <div class="scroll-hint">▼ 下滑查看实验档案 ▼</div>
 </header>
-<div class="warning-tape"><span></span><div class="label">&#x26A0; CAUTION &#xB7; &#x5B9E;&#x9A8C;&#x533A;&#x57DF; &#x26A0;</div><span></span></div>
+<div class="warning-tape"><span></span><div class="label">⚠ CAUTION · 实验区域 ⚠</div><span></span></div>
 
 <section class="section" id="about">
   <div class="section-label">// LAB_OVERVIEW</div>
-  <h2 class="section-title">&#x1F3E2; &#x5B9E;&#x9A8C;&#x5BA4;&#x6982;&#x51B5;</h2>
+  <h2 class="section-title">🏢 实验室概况</h2>
   <div class="lab-intro-card">
-    <p><strong>526&#x5B9E;&#x9A8C;&#x5BA4;</strong>&#xFF0C;&#x4EE3;&#x53F7;&#x201C;&#x975E;&#x6B63;&#x5E38;&#x4EBA;&#x7C7B;&#x7814;&#x7A76;&#x4E2D;&#x5FC3;&#x201D;&#xFF0C;&#x5750;&#x843D;&#x4E8E;&#x4E2D;&#x5C71;&#x5927;&#x5B66;&#x8354;&#x56ED;11&#x680B;&#x3002;&#x672C;&#x5B9E;&#x9A8C;&#x5BA4;&#x6210;&#x7ACB;&#x4E8E;2023&#x5E74;&#xFF0C;&#x7531;&#x56DB;&#x540D;&#x6765;&#x81EA;&#x5929;&#x5357;&#x6D77;&#x5317;&#x7684;&#x201C;&#x7814;&#x7A76;&#x5BF9;&#x8C61;&#x201D;&#x81EA;&#x613F;&#x7EC4;&#x6210;&#x3002;&#x5B9E;&#x9A8C;&#x5BA4;&#x5185;&#x957F;&#x671F;&#x89C2;&#x6D4B;&#x5230;&#x4EE5;&#x4E0B;&#x5F02;&#x5E38;&#x73B0;&#x8C61;&#xFF1A;&#x6DF1;&#x591C;&#x6E38;&#x620F;&#x58F0;&#x3001;&#x95F4;&#x6B47;&#x6027;&#x8D76;ddl&#x60E8;&#x53EB;&#x3001;&#x4E0D;&#x5B9A;&#x65F6;&#x56E2;&#x5EFA;&#x6D3B;&#x52A8;&#xFF08;&#x5305;&#x62EC;&#x805A;&#x9910;&#x3001;&#x5531;K&#x3001;&#x4E32;&#x95E8;&#xFF09;&#x3001;&#x4EE5;&#x53CA;&#x5927;&#x91CF;&#x56FD;&#x5BB6;&#x7EA7;/&#x6821;&#x7EA7;&#x5956;&#x5B66;&#x91D1;&#x7684;&#x79BB;&#x5947;&#x4EA7;&#x51FA;&#x3002;&#x7814;&#x7A76;&#x81F3;&#x4ECA;&#xFF0C;&#x5C1A;&#x672A;&#x53D1;&#x73B0;&#x4EFB;&#x4F55;&#x201C;&#x6B63;&#x5E38;&#x4EBA;&#x7C7B;&#x201D;&#x884C;&#x4E3A;&#x7684;&#x8FF9;&#x8C61;&#x3002;</p>
-    <p style="margin-top:1rem;font-size:.8rem;color:var(--amber)">&#x25B6; &#x7814;&#x7A76;&#x7ED3;&#x8BBA;&#xFF1A;&#x6B64;&#x5904;&#x975E;&#x6B63;&#x5E38;&#x6D53;&#x5EA6;&#x4E25;&#x91CD;&#x8D85;&#x6807;&#xFF0C;&#x5EFA;&#x8BAE;&#x957F;&#x671F;&#x4FDD;&#x7559;&#x89C2;&#x5BDF;&#x3002;</p>
+    <p><strong>526实验室</strong>，代号"非正常人类研究中心"，坐落于中山大学荔园11栋。本实验室成立于2023年，由四名来自天南海北的"研究对象"自愿组成。实验室内长期观测到以下异常现象：深夜游戏声、间歇性赶ddl惨叫、不定时团建活动（包括聚餐、唱K、串门）、以及大量国家级/校级奖学金的离奇产出。研究至今，尚未发现任何"正常人类"行为的迹象。</p>
+    <p style="margin-top:1rem;font-size:.8rem;color:var(--amber)">▶ 研究结论：此处非正常浓度严重超标，建议长期保留观察。</p>
   </div>
 </section>
 
 <section class="section" id="subjects">
   <div class="section-label">// RESEARCH_SUBJECTS</div>
-  <h2 class="section-title">&#x1F9EC; &#x89C2;&#x5BDF;&#x5BF9;&#x8C61;&#x6863;&#x6848;</h2>
-  <p class="section-desc">&#x4EE5;&#x4E0B;&#x4E3A;&#x56DB;&#x540D;&#x6838;&#x5FC3;&#x7814;&#x7A76;&#x5BF9;&#x8C61;&#x7684;&#x8BE6;&#x7EC6;&#x6863;&#x6848;&#x3002;&#x70B9;&#x51FB;&#x300C;&#x5C55;&#x5F00;&#x89C2;&#x6D4B;&#x8BB0;&#x5F55;&#x300D;&#x67E5;&#x770B;&#x5B8C;&#x6574;&#x884C;&#x4E3A;&#x63CF;&#x8FF0;&#x3002;</p>
+  <h2 class="section-title">🧬 观察对象档案</h2>
+  <p class="section-desc">以下为四名核心研究对象的详细档案。点击「展开观测记录」查看完整行为描述。</p>
   <div class="member-grid" id="memberGrid"></div>
 </section>
 
-<div class="warning-tape"><div class="label">&#x26A0; RESTRICTED &#x26A0;</div><span></span><div class="label">&#x26A0; RESTRICTED &#x26A0;</div></div>
+<div class="warning-tape"><div class="label">⚠ RESTRICTED ⚠</div><span></span><div class="label">⚠ RESTRICTED ⚠</div></div>
 
 <section class="section" id="gallery">
   <div class="section-label">// PHOTO_ARCHIVE</div>
-  <h2 class="section-title">&#x1F4F8; &#x5B9E;&#x9A8C;&#x5BA4;&#x5F71;&#x50CF;&#x6863;&#x6848;</h2>
-  <p class="section-desc">&#x7FFB;&#x770B;&#x8FD9;&#x4E9B;&#x7167;&#x7247;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90A3;&#x4E9B;&#x4E00;&#x8D77;&#x71AC;&#x591C;&#x3001;&#x4E00;&#x8D77;&#x805A;&#x9910;&#x3001;&#x4E00;&#x8D77;&#x75AF;&#x7684;&#x65E5;&#x5B50;&#x4EFF;&#x4F5B;&#x5C31;&#x5728;&#x6628;&#x5929;&#x3002;</p>
+  <h2 class="section-title">📸 实验室影像档案</h2>
+  <p class="section-desc">翻看这些照片的时候，那些一起熬夜、一起聚餐、一起疯的日子仿佛就在昨天。</p>
   <div class="gallery-grid" id="galleryGrid"></div>
 </section>
 
 <section class="section" id="achievements">
   <div class="section-label">// LAB_ACHIEVEMENTS</div>
-  <h2 class="section-title">&#x1F3C6; &#x5B9E;&#x9A8C;&#x5BA4;&#x6210;&#x679C;</h2>
-  <p class="section-desc">&#x4EE5;&#x4E0B;&#x4E3A;526&#x5B9E;&#x9A8C;&#x5BA4;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x53D6;&#x5F97;&#x7684;&#x201C;&#x5F02;&#x5E38;&#x79D1;&#x7814;&#x6210;&#x679C;&#x201D;&#x3002;</p>
+  <h2 class="section-title">🏆 实验室成果</h2>
+  <p class="section-desc">以下为526实验室在运行期间取得的"异常科研成果"。</p>
   <div class="achievements">
-    <h3>&#x1F4CB; &#x83B7;&#x5956;&#x6E05;&#x5355;</h3>
+    <h3>📋 获奖清单</h3>
     <div class="achievement-list" id="achievementList"></div>
   </div>
 </section>
 
 <section class="section" id="activities">
   <div class="section-label">// FIELD_NOTES</div>
-  <h2 class="section-title">&#x1F389; &#x5B9E;&#x9A8C;&#x5BA4;&#x56E2;&#x5EFA;&#x8BB0;&#x5F55;</h2>
-  <p class="section-desc">&#x5728;&#x7D27;&#x5F20;&#x7684;&#x5B9E;&#x9A8C;&#x7814;&#x7A76;&#x4E4B;&#x4F59;&#xFF0C;&#x7814;&#x7A76;&#x5BF9;&#x8C61;&#x4EEC;&#x4E5F;&#x4F1A;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x201C;&#x793E;&#x4F1A;&#x5316;&#x6D3B;&#x52A8;&#x201D;&#x3002;</p>
-  <h3 style="color:var(--amber);margin:2rem 0 1rem;font-size:1.1rem;letter-spacing:2px">&#x1F372; &#x5BF9;&#x8C61;#001&#x5BB6;&#x4E2D;&#x505A;&#x5BA2;</h3>
-  <p style="color:var(--muted);margin-bottom:1rem;font-size:.9rem">&#x7814;&#x7A76;&#x5BF9;&#x8C61;#001&#xFF08;&#x9648;&#x6797;&#x52CB;&#xFF09;&#x66FE;&#x9080;&#x8BF7;&#x5176;&#x4F59;&#x6210;&#x5458;&#x524D;&#x5F80;&#x5176;&#x6C55;&#x5934;&#x4F4F;&#x5B85;&#x8FDB;&#x884C;&#x5B9E;&#x5730;&#x8003;&#x5BDF;&#x3002;</p>
+  <h2 class="section-title">🎉 实验室团建记录</h2>
+  <p class="section-desc">在紧张的实验研究之余，研究对象们也会进行一些"社会化活动"。</p>
+  <h3 style="color:var(--amber);margin:2rem 0 1rem;font-size:1.1rem;letter-spacing:2px">🍲 对象#001家中做客</h3>
+  <p style="color:var(--muted);margin-bottom:1rem;font-size:.9rem">研究对象#001（陈林勋）曾邀请其余成员前往其汕头住宅进行实地考察。</p>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="images/image10.jpeg" alt="&#x5230;&#x5BB6;&#x5403;&#x996D;" onclick="openLb('images/image10.jpeg')"></div>
-    <div class="gallery-item"><img src="images/image11.jpeg" alt="&#x5230;&#x5BB6;&#x5403;&#x996D;" onclick="openLb('images/image11.jpeg')"></div>
+    <div class="gallery-item"><img src="images/image10.jpeg" alt="到家吃饭" onclick="openLb('images/image10.jpeg')"></div>
+    <div class="gallery-item"><img src="images/image11.jpeg" alt="到家吃饭" onclick="openLb('images/image11.jpeg')"></div>
   </div>
-  <h3 style="color:var(--amber);margin:2.5rem 0 1rem;font-size:1.1rem;letter-spacing:2px">&#x1F3B6; &#x5BBF;&#x820D;&#x51FA;&#x53BB;&#x56E2;&#x5EFA;&#x73A9;</h3>
-  <p style="color:var(--muted);margin-bottom:1rem;font-size:.9rem">&#x5BBF;&#x820D;&#x5076;&#x5C14;&#x4F1A;&#x51FA;&#x53BB;&#x805A;&#x9910;&#x5531;&#x6B4C;&#xFF0C;&#x5BBF;&#x820D;&#x6C1B;&#x56F4;&#x5341;&#x5206;&#x878D;&#x6D3D;&#x3002;</p>
+  <h3 style="color:var(--amber);margin:2.5rem 0 1rem;font-size:1.1rem;letter-spacing:2px">🎶 宿舍出去团建玩</h3>
+  <p style="color:var(--muted);margin-bottom:1rem;font-size:.9rem">宿舍偶尔会出去聚餐唱歌，宿舍氛围十分融洽。</p>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="images/image12.jpeg" alt="&#x51FA;&#x53BB;&#x56E2;&#x5EFA;" onclick="openLb('images/image12.jpeg')"></div>
-    <div class="gallery-item"><img src="images/image13.jpeg" alt="&#x51FA;&#x53BB;&#x56E2;&#x5EFA;" onclick="openLb('images/image13.jpeg')"></div>
+    <div class="gallery-item"><img src="images/image12.jpeg" alt="出去团建" onclick="openLb('images/image12.jpeg')"></div>
+    <div class="gallery-item"><img src="images/image13.jpeg" alt="出去团建" onclick="openLb('images/image13.jpeg')"></div>
   </div>
 </section>
 
-
 <div class="quote-section">
-  <blockquote>&#x65E2;&#x4E0D;&#x60F3;&#x8EBA;&#x5E73;&#xFF0C;&#x53C8;&#x5377;&#x4E0D;&#x8D77;&#x6765;&#x2014;&#x2014;&#x8FD9;&#x5C31;&#x662F;526&#x7684;&#x57FA;&#x672C;&#x751F;&#x5B58;&#x54F2;&#x5B66;</blockquote>
-  <p class="attribution">&#x2014;&#x2014; &#x5B9E;&#x9A8C;&#x5BA4;&#x89C2;&#x5BDF;&#x65E5;&#x5FD7; #526</p>
+  <blockquote>既不想躺平，又卷不起来——这就是526的基本生存哲学</blockquote>
+  <p class="attribution">—— 实验室观察日志 #526</p>
 </div>
 
 <footer class="footer">
   <div class="lab-stamp">TOP SECRET</div>
-  <p>&#x4E2D;&#x5C71;&#x5927;&#x5B66; &#xB7; &#x8354;&#x56ED;11&#x680B;526&#x5BA4; &#xB7; &#x975E;&#x6B63;&#x5E38;&#x4EBA;&#x7C7B;&#x7814;&#x7A76;&#x4E2D;&#x5FC3;</p>
-  <p style="margin-top:.3rem">Est. 2023 &#xB7; &#x5B9E;&#x9A8C;&#x6301;&#x7EED;&#x8FDB;&#x884C;&#x4E2D;</p>
-  <div class="easter-egg" onclick="document.getElementById('hiddenMsg').style.display='block'">[&#x70B9;&#x51FB;&#x89E3;&#x5BC6;&#x673A;&#x5BC6;&#x6863;&#x6848;]</div>
-  <p id="hiddenMsg" style="display:none;margin-top:1rem;color:var(--green);font-size:.85rem">&#x1F393; &#x795D;526&#x7684;&#x5404;&#x4F4D;&#x6BD5;&#x4E1A;&#x5FEB;&#x4E50;&#xFF0C;&#x524D;&#x7A0B;&#x4F3C;&#x9526;&#xFF01;<br>&#x2014;&#x2014; &#x4E0D;&#x7BA1;&#x8D70;&#x5230;&#x54EA;&#x91CC;&#xFF0C;&#x8FD9;&#x91CC;&#x6C38;&#x8FDC;&#x662F;&#x4F60;&#x4EEC;&#x7684;&#x975E;&#x6B63;&#x5E38;&#x4EBA;&#x7C7B;&#x7814;&#x7A76;&#x4E2D;&#x5FC3;&#x3002;</p>
+  <p>中山大学 · 荔园11栋526室 · 非正常人类研究中心</p>
+  <p style="margin-top:.3rem">Est. 2023 · 实验持续进行中</p>
+  <div class="easter-egg" onclick="document.getElementById('hiddenMsg').style.display='block'">[点击解密机密档案]</div>
+  <p id="hiddenMsg" style="display:none;margin-top:1rem;color:var(--green);font-size:.85rem">🎓 祝526的各位毕业快乐，前程似锦！<br>—— 不管走到哪里，这里永远是你们的非正常人类研究中心。</p>
 </footer>
 
 <div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
@@ -186,30 +192,30 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;b
 <script>
 var IMG='images/';
 var members=[
-  {s:'SUBJ-001',n:'\u9648\u6797\u52CB',o:'\u5E7F\u4E1C\xB7\u6C55\u5934',d:'\u6C34\u6587\u4E0E\u6C34\u8D44\u6E90\u65B9\u5411',r:['\u5BBF\u820D\u957F','\u73ED\u957F','\u8DB3\u7403\u961F\u961F\u957F','\u786C\u7B14\u4E66\u6CD5\u5BB6'],im:[IMG+'image1.jpeg'],
-    b:'\u6765\u81EA\u5E7F\u4E1C\u6C55\u5934\u7684<strong>\u5BBF\u820D\u957F\u5927\u4EBA</strong>\uFF0C\u8EAB\u517C2023\u7EA71\u73ED\u73ED\u957F\u548C\u571F\u6728\u5DE5\u7A0B\u5B66\u9662\u8DB3\u7403\u961F\u961F\u957F\u3002\u7231\u597D\u5E7F\u6CDB\u5230\u4EE4\u4EBA\u53D1\u6307\u2014\u2014\u5065\u8EAB\u3001\u8DB3\u7403\u3001\u7BEE\u7403\u3001\u6E38\u6CF3\u4E00\u4E2A\u4E0D\u843D\uFF0C\u8FD8\u5199\u5F97\u4E00\u624B\u786C\u7B14\u4E66\u6CD5\u3002\u538B\u529B\u5927\u65F6\u4F1A\u53BB\u6D77\u8FB9\u5439\u98CE\uFF0C\u5FC3\u60C5\u4E0D\u597D\u65F6\u4F1A\u60F3\u9A91\u8F66\u53BB\u5916\u9762\u8D70\u8D70\u3002\u7ECF\u5178\u540D\u8A00\uFF1A<em>"\u4E0D\u613F\u610F\u8EBA\u5E73\u4F46\u662F\u53C8\u5377\u4E0D\u8D77\u6765"</em>\u3002',
-    e:'\u5BBF\u820D\u91CC\u7684\u5927\u54E5\u5927\uFF0C\u540C\u65F6\u4E5F\u662F\u7B2C\u4E00\u4F4D\u9080\u8BF7\u5168\u5BBF\u820D\u53BB\u5BB6\u91CC\u505A\u5BA2\u7684\u597D\u5BA2\u4E4B\u4EBA\u3002\u5728\u7403\u573A\u4E0A\u662F\u98CE\u4E00\u822C\u7684\u7537\u5B50\uFF0C\u5728\u4E66\u684C\u524D\u662F\u9759\u5982\u5904\u5B50\u7684\u4E66\u6CD5\u5BB6\u3002\u5C5E\u4E8E"\u4EC0\u4E48\u90FD\u884C"\u578B\u4EBA\u683C\uFF0C\u662F\u7EF4\u7CFB526\u5B9E\u9A8C\u5BA4\u7A33\u5B9A\u7684\u5173\u952E\u6838\u5FC3\u3002'},
-  {s:'SUBJ-002',n:'\u9648\u57FA\u6797',o:'\u6D59\u6C5F\xB7\u9F99\u6CC9',d:'\u6D77\u4E0A\u98CE\u7535\u65B9\u5411',r:['\u7FBD\u6BDB\u7403\u961F\u961F\u5458','\u5B66\u751F\u4F1A\u5E72\u4E8B'],im:[IMG+'image2.jpeg'],
-    b:'\u6765\u81EA\u6D59\u6C5F\u9F99\u6CC9\u7684<strong>\u7FBD\u6BDB\u7403\u5C0F\u738B\u5B50</strong>\uFF0C\u70ED\u7231\u6253\u7FBD\u6BDB\u7403\u548C\u6253\u6E38\u620F\u3002\u66FE\u4EFB\u571F\u6728\u5DE5\u7A0B\u5B66\u9662\u7FBD\u6BDB\u7403\u961F\u961F\u5458\u548C\u5B66\u751F\u4F1A\u751F\u6D3B\u5B9E\u8DF5\u90E8\u5E72\u4E8B\u3002\u65E5\u5E38\u4E3A\u4EBA\u8C26\u548C\uFF0C\u79EF\u6781\u4E50\u89C2\uFF0C\u6D3B\u6CFC\u5F00\u6717\u2014\u2014\u7B80\u5355\u6765\u8BF4\u5C31\u662F\u5BBF\u820D\u91CC\u7684<strong>\u5F00\u5FC3\u679C</strong>\u3002',
-    e:'\u5B89\u9759\u7684\u6D59\u6C5F\u7537\u5B69\uFF0C\u8BF4\u8BDD\u6E29\u6E29\u67D4\u67D4\u7684\uFF0C\u4F46\u4E0A\u4E86\u7403\u573A\u5C31\u662F\u53E6\u4E00\u526F\u9762\u5B54\u3002\u5728\u5BBF\u820D\u91CC\u7684\u5B9A\u4F4D\u662F"\u8C01\u90FD\u80FD\u804A\u5F97\u6765\u7684\u597D\u820D\u53CB"\uFF0C\u4ECE\u5B66\u4E60\u5230\u6E38\u620F\u5230\u4EBA\u751F\u54F2\u5B66\uFF0C\u627E\u4ED6\u804A\u5929\u51C6\u6CA1\u9519\u3002'},
-  {s:'SUBJ-003',n:'\u848B\u8D85\u7FD4',o:'\u6E56\u5357\xB7\u76CA\u9633',d:'\u6C34\u6587\u4E0E\u6C34\u8D44\u6E90\u65B9\u5411',r:['\u5B66\u751F\u4F1A\u4E3B\u5E2D\u56E2\u6210\u5458','\u56E2\u652F\u4E66','\u5FD7\u613F\u670D\u52A1\u8FBE\u4EBA'],im:[IMG+'image3.jpeg'],
-    b:'\u6765\u81EA\u6E56\u5357\u76CA\u9633\u7684<strong>\u653F\u6CBB\u5927\u4F6C</strong>\uFF0C\u8EAB\u517C\u571F\u6728\u5DE5\u7A0B\u5B66\u9662\u5B66\u751F\u4F1A\u4E3B\u5E2D\u56E2\u6210\u5458\u548C\u73ED\u7EA7\u56E2\u652F\u4E66\u3002\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u751F\u6D3B\u4E0A\u4E3A\u4EBA\u53CB\u5584\uFF0C\u4E50\u89C2\u79EF\u6781\u3002\u70ED\u7231\u5404\u7C7B\u8FD0\u52A8\uFF0C\u79EF\u6781\u6295\u8EAB\u5FD7\u613F\u670D\u52A1\u6D3B\u52A8\u3002\u6027\u683C\u5E7D\u9ED8\u98CE\u8DA3\uFF0C\u662F\u5BBF\u820D\u91CC\u7684<strong>\u6BB5\u5B50\u624B\u62C5\u5F53</strong>\u3002',
-    e:'\u8868\u9762\u4E0A\u662F\u4E25\u8083\u7684\u5B66\u751F\u5E72\u90E8\uFF0C\u5B9E\u9645\u4E0A\u662F\u5BBF\u820D\u91CC\u6700\u5927\u7684\u7B11\u70B9\u5236\u9020\u673A\u3002\u7ECF\u5E38\u5728\u5927\u5BB6\u90FD\u5B89\u9759\u7684\u65F6\u5019\u7A81\u7136\u5192\u51FA\u4E00\u53E5\u8BDD\u8BA9\u5168\u5BBF\u820D\u7B11\u5230\u809A\u5B50\u75DB\u3002\u5FD7\u613F\u670D\u52A1\u65F6\u6570\u60CA\u4EBA\uFF0C\u5C5E\u4E8E"\u53C8\u7EA2\u53C8\u4E13\u4F46\u771F\u7684\u5F88\u641E\u7B11"\u7684\u7A00\u6709\u7269\u79CD\u3002'},
-  {s:'SUBJ-004',n:'\u674E\u94E0\u8C26',o:'\u5E7F\u4E1C\xB7\u4E1C\u839E',d:'\u5730\u4E0B\u7A7A\u95F4\u65B9\u5411',r:['DDL\u51B2\u523A\u9009\u624B','\u8D44\u6DF1\u6E38\u620F\u73A9\u5BB6','\u6563\u6B65\u7231\u597D\u8005'],im:[IMG+'image4.jpeg'],
-    b:'\u6765\u81EA\u5E7F\u4E1C\u4E1C\u839E\u7684<strong>\u5947\u5999\u77DB\u76FE\u4F53</strong>\u2014\u2014\u505A\u4E8B\u7231\u89C4\u5212\u4F46\u61D2\u6267\u884C\uFF0C\u65E5\u5E38"\u4E09\u5929\u6253\u9C7C\u4E24\u5929\u6652\u7F51"\uFF1B\u4E60\u60EF\u6027\u62D6\u5EF6\u6478\u9C7C\uFF0C\u4F46\u4E5F\u64C5\u957Fddl\u6781\u9650\u51B2\u523A\u3002\u4E09\u89D2\u6D32\u3001\u738B\u8005\u8363\u8000\u3001\u82F1\u96C4\u8054\u76DF\u6837\u6837\u7CBE\u901A\u3002\u4E5F\u559C\u6B22\u82B1\u4E00\u4E0B\u5348\u51FA\u95E8\u6563\u6B65\u3001\u770B\u98CE\u666F\uFF0C\u4EAB\u53D7\u677E\u5F1B\u7684\u65F6\u5149\u3002<em>"\u65E2\u60F3\u6446\u70C2\u653E\u677E\uFF0C\u4E5F\u80FD\u5168\u529B\u51B2\u523A"</em>\u3002',
-    e:'\u5BBF\u820D\u7684"\u5FEB\u4E50\u5B85"\uFF0C\u80FD\u5750\u7535\u8111\u524D\u5B89\u9759\u6CE1\u4E00\u4E0B\u5348\u6E38\u620F\uFF0C\u4E5F\u80FD\u8BF4\u8D70\u5C31\u8D70\u51FA\u95E8\u6563\u6B65\u3002\u4ED6\u7684\u751F\u6D3B\u8282\u594F\u5B8C\u7F8E\u8BE0\u91CA\u4E86\u4EC0\u4E48\u53EB"\u677E\u5F1B\u6709\u5EA6"\u3002\u6BCF\u9022ddl\u524D\u5915\uFF0C\u4F60\u4F1A\u770B\u5230\u4E00\u4E2A\u5B8C\u5168\u4E0D\u540C\u7684\u4ED6\u2014\u2014\u773C\u795E\u9510\u5229\u3001\u624B\u901F\u60CA\u4EBA\u3001\u6548\u7387\u62C9\u6EE1\u3002'}
+  {s:'SUBJ-001',n:'陈林勋',o:'广东·汕头',d:'水文与水资源方向',r:['宿舍长','班长','足球队队长','硬笔书法家'],im:[IMG+'image1.jpeg'],
+    b:'来自广东汕头的<strong>宿舍长大人</strong>，身兼2023级1班班长和土木工程学院足球队队长。爱好广泛到令人发指——健身、足球、篮球、游泳一个不落，还写得一手硬笔书法。压力大时会去海边吹风，心情不好时会骑车出去走走。经典名言：<em>"不愿意躺平但是又卷不起来"</em>。',
+    e:'宿舍里的大哥大，同时也是第一位邀请全宿舍去家里做客的好客之人。在球场上是风一般的男子，在书桌前是静如处子的书法家。属于"什么都行"型人格，是维系526实验室稳定的关键核心。'},
+  {s:'SUBJ-002',n:'陈基林',o:'浙江·龙泉',d:'海上风电方向',r:['羽毛球队队员','学生会干事'],im:[IMG+'image2.jpeg'],
+    b:'来自浙江龙泉的<strong>羽毛球小王子</strong>，热爱打羽毛球和打游戏。曾任土木工程学院羽毛球队队员和学生会生活实践部干事。日常为人谦和，积极乐观，活泼开朗——简单来说就是宿舍里的<strong>开心果</strong>。',
+    e:'安静的浙江男孩，说话温温柔柔的，但上了球场就是另一副面孔。在宿舍里的定位是"谁都能聊得来的好舍友"，从学习到游戏到人生哲学，找他聊天准没错。'},
+  {s:'SUBJ-003',n:'蒋超翔',o:'湖南·益阳',d:'水文与水资源方向',r:['学生会主席团成员','团支书','志愿服务达人'],im:[IMG+'image3.jpeg'],
+    b:'来自湖南益阳的<strong>政治大佬</strong>，身兼土木工程学院学生会主席团成员和班级团支书。工作认真负责，生活上为人友善，乐观积极。热爱各类运动，积极投身志愿服务活动。性格幽默风趣，是宿舍里的<strong>段子手担当</strong>。',
+    e:'表面上是严肃的学生干部，实际上是宿舍里最大的笑点制造机。经常在大家都安静的时候突然冒出一句话让全宿舍笑到肚子疼。志愿服务时数惊人，属于"又红又专但真的很搞笑"的稀有物种。'},
+  {s:'SUBJ-004',n:'李铠谦',o:'广东·东莞',d:'地下空间方向',r:['DDL冲刺选手','资深游戏玩家','散步爱好者'],im:[IMG+'image4.jpeg'],
+    b:'来自广东东莞的<strong>奇妙矛盾体</strong>——做事爱规划但懒执行，日常"三天打鱼两天晒网"；习惯性拖延摸鱼，但也擅长ddl极限冲刺。三角洲、王者荣耀、英雄联盟样样精通。也喜欢花一下午出门散步、看风景，享受松弛的时光。<em>"既想摆烂放松，也能全力冲刺"</em>。',
+    e:'宿舍的"快乐宅"，能坐电脑前安静泡一下午游戏，也能说走就走出门散步。他的生活节奏完美诠释了什么叫"松弛有度"。每逢ddl前夕，你会看到一个完全不同的他——眼神锐利、手速惊人、效率拉满。'}
 ];
 var gallerySrc=[IMG+'image5.jpeg',IMG+'image6.jpeg',IMG+'image7.jpeg',IMG+'image8.jpeg',IMG+'image9.jpeg'];
 var achievements=[
-  '2023-2024 \u4E2D\u5C71\u5927\u5B66\u4E8C\u7B49\u5956\u5B66\u91D1','2023-2024 \u4E2D\u5C71\u5927\u5B66\u4E09\u7B49\u5956\u5B66\u91D1',
-  '2024-2025 \u56FD\u5BB6\u5956\u5B66\u91D1','2024-2025 \u4E2D\u5C71\u5927\u5B66\u4E00\u7B49\u5956\u5B66\u91D1',
-  '2024-2025 \u4E2D\u5C71\u5927\u5B66\u4E8C\u7B49\u5956\u5B66\u91D1','2024-2025 \u4E2D\u5C71\u5927\u5B66\u4E09\u7B49\u5956\u5B66\u91D1',
-  '\u7B2C\u4E03\u5C4A\u5168\u56FD\u5927\u5B66\u751F\u53EF\u518D\u751F\u80FD\u6E90\u4F18\u79C0\u79D1\u6280\u4F5C\u54C1\u7ADE\u8D5B\u4E00\u7B49\u5956',
-  '\u7B2C\u516B\u5C4A\u5168\u56FD\u5927\u5B66\u751F\u53EF\u518D\u751F\u80FD\u6E90\u4F18\u79C0\u79D1\u6280\u4F5C\u54C1\u7ADE\u8D5B\u4E8C\u7B49\u5956',
-  '\u7B2C\u4E94\u5C4A"\u5E7F\u6C47\u6E90\u676F"\u667A\u6167\u6C34\u5229\u521B\u65B0\u5927\u8D5B\u4E8C\u7B49\u5956',
-  '\u7B2C\u5341\u516D\u5C4A\u5168\u56DD\u5927\u5B66\u751F\u6570\u5B66\u7ADE\u8D5B\u4E09\u7B49\u5956',
-  '2023-2024 \u4F18\u79C0\u56E2\u5458\u3001\u4F18\u79C0\u56E2\u5E72\u90E8','2024-2025 \u4F18\u79C0\u56E2\u5458\u3001\u4F18\u79C0\u56E2\u5E72\u90E8',
-  '\u4E2D\u5C71\u5927\u5B66\u4E00\u661F\u7EA7\u5FD7\u613F\u8005','\u4E2D\u5C71\u5927\u5B66\u4E8C\u661F\u7EA7\u5FD7\u613F\u8005'
+  '2023-2024 中山大学二等奖学金','2023-2024 中山大学三等奖学金',
+  '2024-2025 国家奖学金','2024-2025 中山大学一等奖学金',
+  '2024-2025 中山大学二等奖学金','2024-2025 中山大学三等奖学金',
+  '第七届全国大学生可再生能源优秀科技作品竞赛一等奖',
+  '第八届全国大学生可再生能源优秀科技作品竞赛二等奖',
+  '第五届"广汇源杯"智慧水利创新大赛二等奖',
+  '第十六届全国大学生数学竞赛三等奖',
+  '2023-2024 优秀团员、优秀团干部','2024-2025 优秀团员、优秀团干部',
+  '中山大学一星级志愿者','中山大学二星级志愿者'
 ];
 function openLb(s){document.getElementById('lightboxImg').src=s;document.getElementById('lightbox').classList.add('show')}
 var grid=document.getElementById('memberGrid');
@@ -219,21 +225,14 @@ members.forEach(function(m,i){
   var h='';
   if(m.im.length){h='<img class="card-img" src="'+m.im[0]+'" alt="'+m.n+'" onclick="openLb(\''+m.im[0]+'\')">'}
   h+='<div class="card-body">'
-    +'<div class="status"><span class="dot"></span> ACTIVE \xB7 \u6B63\u5728\u89C2\u6D4B\u4E2D</div>'
-    +'<div class="specimen-id">'+m.s+' \xB7 '+m.d+'</div>'
+    +'<div class="status"><span class="dot"></span> ACTIVE · 正在观测中</div>'
+    +'<div class="specimen-id">'+m.s+' · '+m.d+'</div>'
     +'<div class="name">'+m.n+'</div>'
     +'<div class="origin">'+m.o+'</div>'
     +'<div class="direction">'+m.d+'</div>'
     +'<div class="role-tags">'+roles+'</div>'
-    +'<div class="bio">'+m.b+'</div>';
-  if(m.im.length>1){
-    h+='<div class="member-thumbs">';
-    for(var j=1;j<m.im.length;j++){
-      h+='<img src="'+m.im[j]+'" onclick="openLb(\''+m.im[j]+'\')">';
-    }
-    h+='</div>';
-  }
-  h+='<button class="expand-btn" data-i="'+i+'">\u25B6 \u5C55\u5F00\u89C2\u6D4B\u8BB0\u5F55</button>'
+    +'<div class="bio">'+m.b+'</div>'
+    +'<button class="expand-btn" data-i="'+i+'">▶ 展开观测记录</button>'
     +'<div class="extra-info" id="ex'+i+'">'+m.e+'</div>'
     +'</div>';
   card.innerHTML=h;grid.appendChild(card);
@@ -241,20 +240,20 @@ members.forEach(function(m,i){
 var gg=document.getElementById('galleryGrid');
 gallerySrc.forEach(function(s){
   var item=document.createElement('div');item.className='gallery-item';
-  item.innerHTML='<img src="'+s+'" alt="photo" onclick="openLb(\''+s+'\')">';
+  item.innerHTML='<img src="'+s+'" alt="certificate" onclick="openLb(\''+s+'\')">';
   gg.appendChild(item);
 });
 var al=document.getElementById('achievementList');
 achievements.forEach(function(a){
   var item=document.createElement('div');item.className='achievement-item';
-  item.innerHTML='<span class="trophy">\uD83C\uDFC5</span> '+a;al.appendChild(item);
+  item.innerHTML='<span class="trophy">🏅</span> '+a;al.appendChild(item);
 });
 document.addEventListener('click',function(e){
   if(e.target.classList.contains('expand-btn')){
     var idx=e.target.dataset.i;
     var ex=document.getElementById('ex'+idx);
     var sh=ex.classList.toggle('show');
-    e.target.textContent=sh?'\u25BC \u6536\u8D77\u89C2\u6D4B\u8BB0\u5F55':'\u25B6 \u5C55\u5F00\u89C2\u6D4B\u8BB0\u5F55';
+    e.target.textContent=sh?'▼ 收起观测记录':'▶ 展开观测记录';
   }
 });
 var pc=document.getElementById('particles');
@@ -270,6 +269,22 @@ for(var i=0;i<30;i++){
 document.querySelector('.scroll-hint').addEventListener('click',function(){
   document.getElementById('about').scrollIntoView({behavior:'smooth'});
 });
+function toggleMusic(){
+  var a=document.getElementById('bgm'),b=document.getElementById('musicBtn'),t=document.getElementById('musicTip');
+  if(a.paused){
+    a.play().then(function(){
+      b.classList.add('on');b.textContent='♫';t.textContent='正在播放';t.classList.add('show');
+      setTimeout(function(){t.classList.remove('show')},2000);
+    }).catch(function(){
+      t.textContent='请先点击页面上任何位置，然后再点播放';t.classList.add('show');
+      setTimeout(function(){t.classList.remove('show')},3000);
+    });
+  }else{
+    a.pause();b.classList.remove('on');b.textContent='♪';t.textContent='已暂停';t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show')},2000);
+  }
+}
+
 </script>
 </body>
 </html>
