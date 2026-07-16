@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>526·非正常人类研究中心</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:#f5f5f5;color:#2c2c2c;line-height:1.8;overflow-x:hidden;
+}
+.article{max-width:680px;margin:0 auto;background:#fff}
+
+/* Cover area */
+.cover{
+  width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:#1a1a2e;
+  display:flex;align-items:center;justify-content:center;
+}
+.cover .cover-text{text-align:center;padding:2rem;z-index:1}
+.cover h1{
+  font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:2px;
+  text-shadow:0 2px 8px rgba(0,0,0,.5);
+  margin-bottom:.5rem;
+}
+.cover .sub{font-size:.9rem;color:rgba(255,255,255,.7);letter-spacing:4px;font-weight:300}
+
+/* Section */
+.sec{padding:1.8rem 1.5rem;border-bottom:6px solid #f0f0f0}
+.sec:last-child{border-bottom:none}
+.sec-label{
+  display:inline-block;font-size:.7rem;color:#999;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:.5rem;font-weight:500;
+}
+.sec-title{
+  font-size:1.3rem;font-weight:700;margin-bottom:.8rem;color:#1a1a2e;
+  padding-left:.6rem;border-left:3px solid #39ff9c;
+}
+.sec-desc{font-size:.9rem;color:#666;margin-bottom:1.2rem;line-height:1.7}
+
+/* Member card */
+.member-card{
+  margin-bottom:2rem;border-radius:10px;overflow:hidden;
+  background:#fafbfc;border:1px solid #eee;
+}
+.member-card .m-img{width:100%;height:auto;display:block;object-fit:contain;background:#f0f0f0}
+.member-card .m-body{padding:1.2rem 1rem}
+.member-card .m-name{font-size:1.4rem;font-weight:700;margin-bottom:.2rem}
+.member-card .m-tag{display:inline-block;font-size:.75rem;color:#fff;padding:.15rem .6rem;border-radius:10px;margin-bottom:.5rem;font-weight:500}
+.member-card .m-origin{font-size:.8rem;color:#999;margin-bottom:.5rem}
+.member-card .m-roles{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.member-card .m-roles span{font-size:.7rem;color:#666;background:#eee;padding:.2rem .6rem;border-radius:8px}
+.member-card .m-bio{font-size:.88rem;color:#555;line-height:1.8;margin-top:.5rem}
+.member-card .m-bio b{color:#1a1a2e}
+
+/* Gallery */
+.article-img{width:100%;display:block;margin:0;border-radius:4px}
+.img-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:.5rem 0}
+.img-single{margin:.5rem 0}
+.img-row img{width:100%;border-radius:6px;display:block;object-fit:contain;background:#f0f0f0}
+.img-single img{width:100%;border-radius:6px;display:block;object-fit:contain;background:#f0f0f0}
+
+/* Quotes */
+.quote-block{
+  text-align:center;padding:2rem 1.5rem;background:linear-gradient(135deg,#1a1a2e,#2d2d44);
+  color:#fff;margin:.5rem 0;border-radius:6px;
+}
+.quote-block q{font-size:1.2rem;font-weight:300;font-style:italic;display:block;margin-bottom:.5rem}
+.quote-block q::before{content:'"'}
+.quote-block q::after{content:'"'}
+.quote-block .attr{font-size:.8rem;color:rgba(255,255,255,.5)}
+
+/* Footer */
+.foot{
+  padding:2rem 1.5rem;text-align:center;font-size:.75rem;color:#bbb;border-top:1px solid #eee;background:#fff
+}
+.foot .brand{font-size:.9rem;font-weight:700;color:#2c2c2c;margin-bottom:.3rem}
+.foot .easter{color:#bbb;cursor:pointer;margin-top:.8rem;transition:color .2s}
+.foot .easter:hover{color:#39ff9c}
+
+/* member colors */
+.tag-green{background:#00b894}.tag-cyan{background:#0984e3}.tag-purple{background:#6c5ce7}.tag-pink{background:#e84393}
+.name-green{color:#00b894}.name-cyan{color:#0984e3}.name-purple{color:#6c5ce7}.name-pink{color:#e84393}
+
+/* lightbox */
+.lb{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.95);justify-content:center;align-items:center;cursor:pointer}
+.lb.on{display:flex}
+.lb img{max-width:95vw;max-height:95vh;border-radius:4px}
+
+@media(min-width:600px){
+  .member-card{display:flex}
+  .member-card .m-img{width:45%;flex-shrink:0}
+  .member-card .m-body{flex:1}
+  .img-row{grid-template-columns:1fr 1fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="article" id="article">
+
+<!-- Cover -->
+<div class="cover">
+  <div class="cover-text">
+    <h1>非正常人类研究中心</h1>
+    <p class="sub">中山大学 · 荔园11栋 · 526室</p>
+  </div>
+</div>
+
+<!-- Intro -->
+<div class="sec">
+  <div class="sec-label">Lab Overview</div>
+  <div class="sec-title">526实验室概况</div>
+  <p class="sec-desc">
+    代号"非正常人类研究中心"，坐落于中山大学荔园11栋，成立于2023年。四名来自天南海北的"研究对象"在此留下了深夜游戏声、间歇性赶ddl惨叫、不定时团建活动，以及大量国家级/校级奖学金的离奇产出。研究至今，尚未发现"正常人类"行为迹象。
+  </p>
+</div>
+
+<!-- Members -->
+<div class="sec" id="memberSec"></div>
+
+<!-- Achievements -->
+<div class="sec">
+  <div class="sec-label">Honors</div>
+  <div class="sec-title">实验室获奖清单</div>
+  <div id="achList" style="font-size:.88rem;color:#555;line-height:2"></div>
+</div>
+
+<!-- Certificates -->
+<div class="sec">
+  <div class="sec-label">Certificates</div>
+  <div class="sec-title">荣誉证书</div>
+  <div class="img-row" id="certRow"></div>
+</div>
+
+<!-- Activities -->
+<div class="sec">
+  <div class="sec-label">Field Notes</div>
+  <div class="sec-title">到家吃饭</div>
+  <p class="sec-desc">研究对象#001（陈林勋）曾邀请其余成员前往其汕头住宅进行实地考察。</p>
+  <div class="img-row" style="grid-template-columns:1fr 1fr">
+    <img src="images/image10.jpeg" alt="" onclick="ol(this.src)">
+    <img src="images/image11.jpeg" alt="" onclick="ol(this.src)">
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">出去团建</div>
+  <p class="sec-desc">宿舍偶尔会出去聚餐唱歌，氛围十分融洽。</p>
+  <div class="img-row" style="grid-template-columns:1fr 1fr">
+    <img src="images/image12.jpeg" alt="" onclick="ol(this.src)">
+    <img src="images/image13.jpeg" alt="" onclick="ol(this.src)">
+  </div>
+</div>
+
+<!-- Quote -->
+<div class="quote-block">
+  <q>既不想躺平，又卷不起来——这就是526的基本生存哲学</q>
+  <p class="attr">实验室观察日志 #526</p>
+</div>
+
+<!-- Footer -->
+<div class="foot">
+  <div class="brand">526·非正常人类研究中心</div>
+  <p>中山大学 · 荔园11栋526室 · Est. 2023</p>
+  <div class="easter" onclick="document.getElementById('hid').style.display='block'">[点击解密机密档案]</div>
+  <p id="hid" style="display:none;margin-top:.5rem;color:#00b894">🎓 祝526的各位毕业快乐，前程似锦！<br>不管走到哪里，这里永远是你们的非正常人类研究中心。</p>
+</div>
+
+</div><!-- /article -->
+
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img id="lbi" src=""></div>
+
+<script>
+var IMG='images/';
+var members=[
+  {n:'陈林勋',o:'广东·汕头',d:'水文与水资源方向',tc:'tag-green',nc:'name-green',
+   r:['宿舍长','班长','足球队队长','硬笔书法家'],im:IMG+'image1.jpeg',
+   b:'来自广东汕头的<b>宿舍长大人</b>，身兼2023级1班班长和土木工程学院足球队队长。爱好广泛到令人发指——健身、足球、篮球、游泳一个不落，还写得一手硬笔书法。压力大时会去海边吹风，心情不好时会骑车出去走走。经典名言：<em>"不愿意躺平但是又卷不起来"</em>。'},
+  {n:'陈基林',o:'浙江·龙泉',d:'海上风电方向',tc:'tag-cyan',nc:'name-cyan',
+   r:['羽毛球队队员','学生会干事'],im:IMG+'image2.jpeg',
+   b:'来自浙江龙泉的<b>羽毛球小王子</b>，热爱打羽毛球和打游戏。曾任土木工程学院羽毛球队队员和学生会生活实践部干事。日常为人谦和，积极乐观，活泼开朗——简单来说就是宿舍里的<b>开心果</b>。'},
+  {n:'蒋超翔',o:'湖南·益阳',d:'水文与水资源方向',tc:'tag-purple',nc:'name-purple',
+   r:['学生会主席团成员','团支书','志愿服务达人'],im:IMG+'image3.jpeg',
+   b:'来自湖南益阳的<b>政治大佬</b>，身兼土木工程学院学生会主席团成员和班级团支书。工作认真负责，生活上为人友善，乐观积极。热爱各类运动，积极投身志愿服务活动。性格幽默风趣，是宿舍里的<b>段子手担当</b>。'},
+  {n:'李铠谦',o:'广东·东莞',d:'地下空间方向',tc:'tag-pink',nc:'name-pink',
+   r:['DDL冲刺选手','资深游戏玩家','散步爱好者'],im:IMG+'image4.jpeg',
+   b:'来自广东东莞的<b>奇妙矛盾体</b>——做事爱规划但懒执行，日常"三天打鱼两天晒网"；习惯性拖延摸鱼，但也擅长ddl极限冲刺。三角洲、王者荣耀、英雄联盟样样精通。也喜欢花一下午出门散步、看风景，享受松弛的时光。<em>"既想摆烂放松，也能全力冲刺"</em>。'}
+];
+
+var sec=document.getElementById('memberSec');
+sec.innerHTML='<div class="sec-label">Members</div><div class="sec-title">研究对象档案</div>';
+members.forEach(function(m){
+  var roles=m.r.map(function(x){return '<span>'+x+'</span>'}).join('');
+  var card=document.createElement('div');card.className='member-card';
+  card.innerHTML=
+    '<img class="m-img" src="'+m.im+'" alt="'+m.n+'" onclick="ol(this.src)">'
+    +'<div class="m-body">'
+    +'<span class="m-tag '+m.tc+'">'+m.d+'</span>'
+    +'<div class="m-name '+m.nc+'">'+m.n+'</div>'
+    +'<div class="m-origin">'+m.o+'</div>'
+    +'<div class="m-roles">'+roles+'</div>'
+    +'<div class="m-bio">'+m.b+'</div>'
+    +'</div>';
+  sec.appendChild(card);
+});
+
+var achievements=[
+  '2023-2024 中山大学二等奖学金 / 三等奖学金',
+  '2024-2025 国家奖学金 / 中山大学一等奖学金',
+  '2024-2025 中山大学二等奖学金 / 三等奖学金',
+  '第七届全国大学生可再生能源优秀科技作品竞赛一等奖',
+  '第八届全国大学生可再生能源优秀科技作品竞赛二等奖',
+  '第五届"广汇源杯"智慧水利创新大赛二等奖',
+  '第十六届全国大学生数学竞赛三等奖',
+  '2023-2024 / 2024-2025 优秀团员、优秀团干部',
+  '中山大学一星级 / 二星级志愿者'
+];
+var al=document.getElementById('achList');
+achievements.forEach(function(a){
+  var p=document.createElement('p');p.innerHTML='🏅 '+a;al.appendChild(p);
+});
+
+var certRow=document.getElementById('certRow');
+for(var i=5;i<=9;i++){
+  var img=document.createElement('img');
+  img.src='images/image'+i+'.jpeg';img.onclick=function(){ol(this.src)};
+  certRow.appendChild(img);
+}
+
+function ol(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('on')}
+</script>
+</body>
+</html>
